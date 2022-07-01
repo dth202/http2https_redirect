@@ -11,9 +11,15 @@ server {
 Any traffic you pass through to this container will force the client to resubmit with https. This makes enforcing https in your stack in situations where the stack doesn't natively support it. Like with the zabbix server stack.
 
 
+## Tags
+*Latest* - watching all pushes to the main branch, includes minor changes to be tested.
+*stable* - Latest Release version
+*v#*     - Release versions. 
+
+
 ## Simple usage
 ```
-docker run -d -p '80:80' dth202/http2https_redirect
+docker run -d -p '80:80' dth202/http2https_redirect:stable
 ```
 
 ## Advanced Usage
@@ -24,7 +30,7 @@ docker run \
   -v nginx_conf:/etc/nginx/conf.d \
   -p '80:80'
   --restart unless-stopped \
-  dth202/http2https_redirect
+  dth202/http2https_redirect:stable
 ```
 
 ## Docker-Compose
@@ -33,7 +39,7 @@ version: "3"
 
 services:
   http2https_redirect:
-    image: dth202/http2https_redirect
+    image: dth202/http2https_redirect:stable
     restart: unless-stopped
     ports:
       - '80:80'
