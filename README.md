@@ -47,6 +47,9 @@ The volume is not necessary unless you want to modify the server entry with manu
 
 This is free to use/distribute. However feel free to contribute if you feel like there is more functionality you would like to implement.
 
+## Github Repo
+[https://github.com/dth202/http2https_redirect](https://github.com/dth202/http2https_redirect)
+
 ## Changelog
 
 2022/07/00 - Created Repo
