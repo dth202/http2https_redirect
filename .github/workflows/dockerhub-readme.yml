@@ -22,7 +22,7 @@ jobs:
           user: ${{ secrets.DOCKERHUB_USERNAME }}
           pass: ${{ secrets.DOCKERHUB_TOKEN }}
           slug: ${{ env.DOCKERHUB_REPO }}
-          description: true
+          description: false
           #readme: "./README.md"
       # To Implement in future. Currently I am not sure how to format the Description in the Readme.md file
       # - 
