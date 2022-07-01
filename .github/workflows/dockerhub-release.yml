@@ -1,5 +1,8 @@
 name: dockerhub-release
 
+env:
+  DOCKERHUB_REPO: dth202/http2https_redirect
+
 on:
   release:
     types: [published]
@@ -25,4 +28,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: dth202/http2https_redirect:stable,dth202/http2https_redirect:${{ github.ref_name }}
+          tags: ${{ DOCKERHUB_REPO }}:stable,${{ DOCKERHUB_REPO }}:${{ github.ref_name }}

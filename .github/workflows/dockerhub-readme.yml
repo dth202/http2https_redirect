@@ -1,0 +1,33 @@
+name: dockerhub-readme
+
+env:
+  DOCKERHUB_REPO: dth202/http2https_redirect
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - README.md
+      - .github/workflows/dockerhub-readme.yml
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Sync Readme
+        uses: ms-jpq/sync-dockerhub-readme@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          repository: ${{ DOCKERHUB_REPO }}
+          readme: "./README.md"
+      # To Implement in future. Currently I am not sure how to format the Description in the Readme.md file
+      # - 
+      #   name: Docker Hub Description
+      #   uses: peter-evans/dockerhub-description@v3
+      #   with:
+      #     username: ${{ secrets.DOCKERHUB_USERNAME }}
+      #     password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      #     repository: peterevans/dockerhub-description

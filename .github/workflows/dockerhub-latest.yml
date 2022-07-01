@@ -1,5 +1,8 @@
 name: dockerhub-latest
 
+env:
+  DOCKERHUB_REPO: dth202/http2https_redirect
+
 on:
   workflow_dispatch:
   push:
@@ -27,4 +30,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: dth202/http2https_redirect:latest
+          tags: ${{ DOCKERHUB_REPO }}:latest
+
