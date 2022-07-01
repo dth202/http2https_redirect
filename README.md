@@ -12,6 +12,7 @@ Any traffic you pass through to this container will force the client to resubmit
 
 
 ## Tags
+
 *Latest* - watching all pushes to the main branch, includes minor changes to be tested.
 *stable* - Latest Release version
 *v#*     - Release versions. 
