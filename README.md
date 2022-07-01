@@ -1,7 +1,14 @@
-# Linux password hash generator
+# Redirect http requests to https
 
-A simple nginx container that will redirect http to https 
+A simple nginx container that will redirect http to https without any manual setup. This container uses the official nginx image with the following server block
 
+```
+server {
+  listen 80;
+  return 301 https://$server_name$request_uri;
+}
+```
+Any traffic you pass through to this container will force the client to resubmit with https. This makes enforcing https in your stack in situations where the stack doesn't natively support it. Like with the zabbix server stack.
 
 
 ## Simple usage
