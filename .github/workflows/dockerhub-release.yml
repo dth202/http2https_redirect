@@ -28,4 +28,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ${{ DOCKERHUB_REPO }}:stable,${{ DOCKERHUB_REPO }}:${{ github.ref_name }}
+          tags: ${{ env.DOCKERHUB_REPO }}:stable,${{ env.DOCKERHUB_REPO }}:${{ github.ref_name }}
